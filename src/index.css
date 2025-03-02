@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 33% 98%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 250 73% 60%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 250 95% 65%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 50.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans transition-colors duration-300;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-sans font-semibold tracking-tight;
+  }
+
+  code {
+    @apply font-mono text-accent;
+  }
+}
+
+.video-shadow {
+  box-shadow: 0 25px 50px -12px rgba(8, 6, 6, 0.25);
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-md dark:bg-black/30 dark:border-white/10;
+}
+
+.glass-nav {
+  @apply bg-white/70 backdrop-blur-lg border-b border-white/20 dark:bg-black/60 dark:border-white/5;
+}
+
+.section {
+  @apply py-16 md:py-24;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8;
+}
+
+.section-subtitle {
+  @apply text-lg text-muted-foreground max-w-2xl mx-auto text-center mb-12;
+}
+
+.section-container {
+  @apply container mx-auto px-4 md:px-8;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-indigo-400 dark:from-accent dark:to-purple-400;
+}
+
+.code-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239C92AC' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.terminal-code {
+  @apply font-mono text-sm leading-relaxed whitespace-pre-wrap bg-black/90 dark:bg-white/5 rounded-lg p-4 shadow-lg overflow-auto text-green-400 border border-green-500/20;
+}
+
+/* Enhanced animations */
+@keyframes reveal {
+  from {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@keyframes code-pulse {
+  0% {
+    box-shadow: 0 0 5px rgba(102, 51, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(102, 51, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(102, 51, 255, 0.5);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.reveal-text {
+  animation: reveal 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+}
+
+.code-block {
+  @apply relative overflow-hidden rounded-lg border border-accent/20 dark:border-accent/30;
+  animation: code-pulse 3s infinite ease-in-out;
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end);
+}
+
+/* Dark mode toggle animation */
+.toggle-switch-thumb {
+  @apply transition-transform duration-300;
+}
+
+/* Backend-themed components */
+.json-pretty {
+  @apply bg-black/80 dark:bg-white/10 rounded-lg p-4 text-green-400 font-mono text-xs leading-relaxed border border-green-500/20;
+}
+
+.database-icon {
+  @apply text-blue-500 dark:text-blue-400;
+}
+
+.server-icon {
+  @apply text-purple-500 dark:text-purple-400;
+}
+
+.api-icon {
+  @apply text-teal-500 dark:text-teal-400;
+}
+
+/* Globe animation specific styles */
+.globe-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.tech-node {
+  @apply absolute rounded-full shadow-lg;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes rotate-globe {
+  from {
+    transform: rotate3d(1, 1, 1, 0deg);
+  }
+  to {
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
+}
+
+.globe-rotation {
+  animation: rotate-globe 20s linear infinite;
+}
+
+.tech-connection {
+  @apply absolute h-px bg-gradient-to-r from-transparent via-accent to-transparent opacity-70;
+  transform-origin: left center;
+}
+
+/* Glowing effect for tech nodes */
+.tech-glow {
+  @apply absolute rounded-full blur-lg opacity-60;
+  animation: glow 3s infinite alternate ease-in-out;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.7;
+    transform: scale(1.5);
+  }
+}
