@@ -83,9 +83,9 @@ const About: React.FC = () => {
                 <h3 className="text-2xl font-semibold mb-2">Who Am I?</h3>
                 <p className="text-muted-foreground">
                   I'm a passionate Backend Developer with a deep love for
-                  creating efficient, elegant solutions. With experience in various
-                  backend technologies, I focus on building robust and scalable
-                  systems to support seamless user experiences.
+                  creating efficient, elegant solutions. With experience in
+                  various backend technologies, I focus on building robust and
+                  scalable systems to support seamless user experiences.
                 </p>
               </div>
 
@@ -95,7 +95,10 @@ const About: React.FC = () => {
               >
                 <h3 className="text-2xl font-semibold mb-2">What I Do?</h3>
                 <p className="text-muted-foreground">
-                  Crafting modern web apps and api services with a focus on user experience and performance. I'm always eager to learn new technologies and frameworks to stay ahead in the ever-evolving tech landscape.
+                  Crafting modern web apps and api services with a focus on user
+                  experience and performance. I'm always eager to learn new
+                  technologies and frameworks to stay ahead in the ever-evolving
+                  tech landscape.
                 </p>
               </div>
 

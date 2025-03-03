@@ -11,7 +11,9 @@ const Contact: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const prefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     setIsDarkMode(prefersDarkMode);
     if (prefersDarkMode) {
       document.documentElement.classList.add("dark");
@@ -36,16 +38,16 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('https://p.indrajeeth.in/send', {
-        method: 'POST',
+      const response = await fetch("https://p.indrajeeth.in/send", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ name, email, message }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        throw new Error("Failed to send message");
       }
 
       toast.success("Message sent successfully!", {
@@ -64,12 +66,17 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="section bg-secondary/30 dark:bg-secondary/10 relative">
+    <section
+      id="contact"
+      className="section bg-secondary/30 dark:bg-secondary/10 relative"
+    >
       <div className="absolute top-4 right-4 z-10">
         <button
           onClick={toggleDarkMode}
           className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
-          aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+          aria-label={
+            isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+          }
         >
           {isDarkMode ? (
             <Sun className="h-5 w-5 text-yellow-300" />
@@ -104,13 +111,19 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <a href="mailto:mail@indrajeeth.in" className="font-medium hover:text-accent transition-colors">
+                    <a
+                      href="mailto:mail@indrajeeth.in"
+                      className="font-medium hover:text-accent transition-colors"
+                    >
                       mail@indrajeeth.in
                     </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 hover:translate-x-1 transition-transform">
-                  <div className="w-12 h-12 rounded-full glass-card flex items-center justify-center text-accent float-animation" style={{ animationDelay: "0.5s" }}>
+                  <div
+                    className="w-12 h-12 rounded-full glass-card flex items-center justify-center text-accent float-animation"
+                    style={{ animationDelay: "0.5s" }}
+                  >
                     <PiTelegramLogoBold />
                   </div>
                   <div>
@@ -122,11 +135,20 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-3 opacity-0 animate-fade-in-right" style={{ animationDelay: "200ms" }}>
-            <form onSubmit={handleSubmit} className="glass-card rounded-xl p-6 md:p-8">
+          <div
+            className="lg:col-span-3 opacity-0 animate-fade-in-right"
+            style={{ animationDelay: "200ms" }}
+          >
+            <form
+              onSubmit={handleSubmit}
+              className="glass-card rounded-xl p-6 md:p-8"
+            >
               <div className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Your Name
                   </label>
                   <input
@@ -140,7 +162,10 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Your Email
                   </label>
                   <input
@@ -154,7 +179,10 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2"
+                  >
                     Your Message
                   </label>
                   <textarea
@@ -173,7 +201,10 @@ const Contact: React.FC = () => {
                   className="w-full bg-accent text-accent-foreground py-3 px-6 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg disabled:opacity-70"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
-                  <Send size={18} className={isSubmitting ? "animate-pulse" : ""} />
+                  <Send
+                    size={18}
+                    className={isSubmitting ? "animate-pulse" : ""}
+                  />
                 </button>
               </div>
             </form>

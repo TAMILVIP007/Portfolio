@@ -75,22 +75,28 @@ const Hero: React.FC = () => {
             </span>
           </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
             <div className="mb-4">
               <AnimatedText text="Hello, I am" className="block" />
             </div>
             <div className="typing-container">
-              <span className="typing-text text-gradient font-extrabold" style={{ fontVariant: 'small-caps' }}>
-              Indrajeeth
+              <span
+                className="typing-text text-gradient font-extrabold"
+                style={{ fontVariant: "small-caps" }}
+              >
+                Indrajeeth
               </span>
             </div>
-            </h1>
+          </h1>
 
           <p
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 opacity-0 animate-fade-in"
             style={{ animationDelay: "400ms" }}
           >
-            I’m a 22 year old developer from Tamil Nadu, India, driven by a passion for crafting impactful projects. With a focus on web backend development, I’m always on the lookout for opportunities to push boundaries, learn, and grow.
+            I’m a 22 year old developer from Tamil Nadu, India, driven by a
+            passion for crafting impactful projects. With a focus on web backend
+            development, I’m always on the lookout for opportunities to push
+            boundaries, learn, and grow.
           </p>
 
           <div

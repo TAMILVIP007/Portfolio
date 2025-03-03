@@ -17,8 +17,7 @@ const Projects: React.FC = () => {
       description:
         "This bot allows you to download stories from Telegram users effortlessly. Simply send a Telegram username or profile link, and the bot will fetch all available stories for you.",
       tags: ["Python", "telegram", "sql"],
-      imageUrl:
-        "https://files.indrajeeth.in/image_2025-03-03_15-40-22.png",
+      imageUrl: "https://files.indrajeeth.in/image_2025-03-03_15-40-22.png",
       githubUrl: "https://github.com/TAMILVIP007/TgStoryDl",
       liveUrl: "https://t.me/TGStoryDl_Bot",
     },
@@ -30,7 +29,7 @@ const Projects: React.FC = () => {
       imageUrl:
         "https://files.indrajeeth.in/dima-solomin-upBKRmHJrCI-unsplash.jpg",
       githubUrl: "https://github.com/TAMILVIP007/WhatChatGPT",
-    },   
+    },
   ];
 
   return (
