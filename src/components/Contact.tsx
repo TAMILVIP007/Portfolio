@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Mail, Send, Moon, Sun } from "lucide-react";
 import { toast } from "sonner";
 import { PiTelegramLogoBold } from "react-icons/pi";
-import AnimatedText from "./AnimatedText";
 
 const Contact: React.FC = () => {
   const [name, setName] = useState("");
@@ -12,9 +11,7 @@ const Contact: React.FC = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
-    const prefersDarkMode = window.matchMedia(
-      "(prefers-color-scheme: dark)",
-    ).matches;
+    const prefersDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     setIsDarkMode(prefersDarkMode);
     if (prefersDarkMode) {
       document.documentElement.classList.add("dark");
@@ -24,45 +21,55 @@ const Contact: React.FC = () => {
   const toggleDarkMode = () => {
     const newDarkMode = !isDarkMode;
     setIsDarkMode(newDarkMode);
-
     if (newDarkMode) {
       document.documentElement.classList.add("dark");
     } else {
       document.documentElement.classList.remove("dark");
     }
-
     toast.success(`${newDarkMode ? "Dark" : "Light"} mode activated`, {
       description: `Switched to ${newDarkMode ? "dark" : "light"} mode for better viewing experience.`,
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    setTimeout(() => {
+    try {
+      const response = await fetch('https://p.indrajeeth.in/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       toast.success("Message sent successfully!", {
         description: "I'll get back to you as soon as possible.",
       });
       setName("");
       setEmail("");
       setMessage("");
+    } catch (error) {
+      toast.error("Failed to send message", {
+        description: "Something went wrong. Please try again later.",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   return (
-    <section
-      id="contact"
-      className="section bg-secondary/30 dark:bg-secondary/10 relative"
-    >
+    <section id="contact" className="section bg-secondary/30 dark:bg-secondary/10 relative">
       <div className="absolute top-4 right-4 z-10">
         <button
           onClick={toggleDarkMode}
           className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
-          aria-label={
-            isDarkMode ? "Switch to light mode" : "Switch to dark mode"
-          }
+          aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
         >
           {isDarkMode ? (
             <Sun className="h-5 w-5 text-yellow-300" />
@@ -90,28 +97,20 @@ const Contact: React.FC = () => {
                   opportunities to be part of your vision.
                 </p>
               </div>
-
               <div className="space-y-4">
                 <div className="flex items-center gap-4 hover:translate-x-1 transition-transform">
                   <div className="w-12 h-12 rounded-full glass-card flex items-center justify-center text-accent float-animation">
                     <Mail size={20} />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Gmail</p>
-                    <a
-                      href="mailto:mail@indrajeeth.in"
-                      className="font-medium hover:text-accent transition-colors"
-                    >
+                    <p className="text-sm text-muted-foreground">Email</p>
+                    <a href="mailto:mail@indrajeeth.in" className="font-medium hover:text-accent transition-colors">
                       mail@indrajeeth.in
                     </a>
                   </div>
                 </div>
-
                 <div className="flex items-center gap-4 hover:translate-x-1 transition-transform">
-                  <div
-                    className="w-12 h-12 rounded-full glass-card flex items-center justify-center text-accent float-animation"
-                    style={{ animationDelay: "0.5s" }}
-                  >
+                  <div className="w-12 h-12 rounded-full glass-card flex items-center justify-center text-accent float-animation" style={{ animationDelay: "0.5s" }}>
                     <PiTelegramLogoBold />
                   </div>
                   <div>
@@ -123,20 +122,11 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          <div
-            className="lg:col-span-3 opacity-0 animate-fade-in-right"
-            style={{ animationDelay: "200ms" }}
-          >
-            <form
-              onSubmit={handleSubmit}
-              className="glass-card rounded-xl p-6 md:p-8"
-            >
+          <div className="lg:col-span-3 opacity-0 animate-fade-in-right" style={{ animationDelay: "200ms" }}>
+            <form onSubmit={handleSubmit} className="glass-card rounded-xl p-6 md:p-8">
               <div className="space-y-5">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium mb-2"
-                  >
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Your Name
                   </label>
                   <input
@@ -146,15 +136,11 @@ const Contact: React.FC = () => {
                     onChange={(e) => setName(e.target.value)}
                     required
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all dark:bg-black/30"
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                   />
                 </div>
-
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium mb-2"
-                  >
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
                     Your Email
                   </label>
                   <input
@@ -164,15 +150,11 @@ const Contact: React.FC = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     required
                     className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-accent/50 transition-all dark:bg-black/30"
-                    placeholder="john@example.com"
+                    placeholder="yourmail@example.com"
                   />
                 </div>
-
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-medium mb-2"
-                  >
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
                     Your Message
                   </label>
                   <textarea
@@ -185,17 +167,13 @@ const Contact: React.FC = () => {
                     placeholder="Hi, I'd like to talk about..."
                   ></textarea>
                 </div>
-
                 <button
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-accent text-accent-foreground py-3 px-6 rounded-lg font-medium flex items-center justify-center gap-2 transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg disabled:opacity-70"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
-                  <Send
-                    size={18}
-                    className={isSubmitting ? "animate-pulse" : ""}
-                  />
+                  <Send size={18} className={isSubmitting ? "animate-pulse" : ""} />
                 </button>
               </div>
             </form>

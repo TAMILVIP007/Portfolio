@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useRef } from "react";
 import { Code, Terminal, Laptop, Github, Linkedin } from "lucide-react";
 import SkillBadge from "./SkillBadge";
@@ -12,18 +13,14 @@ const About: React.FC = () => {
     "TypeScript",
     "React",
     "Next.js",
-    "Node.js",
-    "Express",
     "MongoDB",
+    "Golang",
     "SQL",
     "GraphQL",
-    "Tailwind CSS",
     "Git",
     "Python",
     "Docker",
     "AWS",
-    "Firebase",
-    "Redux",
   ];
 
   useEffect(() => {
@@ -83,12 +80,12 @@ const About: React.FC = () => {
           <div className="order-2 lg:order-1">
             <div className="space-y-6">
               <div className="opacity-0 animate-fade-in-left">
-                <h3 className="text-2xl font-semibold mb-2">Who I Am</h3>
+                <h3 className="text-2xl font-semibold mb-2">Who Am I?</h3>
                 <p className="text-muted-foreground">
-                  I'm a passionate Full Stack Developer with a deep love for
-                  creating efficient, elegant solutions. With experience in both
-                  frontend and backend technologies, I bridge the gap between
-                  design and functionality to create seamless user experiences.
+                  I'm a passionate Backend Developer with a deep love for
+                  creating efficient, elegant solutions. With experience in various
+                  backend technologies, I focus on building robust and scalable
+                  systems to support seamless user experiences.
                 </p>
               </div>
 
@@ -96,12 +93,9 @@ const About: React.FC = () => {
                 className="opacity-0 animate-fade-in-left"
                 style={{ animationDelay: "150ms" }}
               >
-                <h3 className="text-2xl font-semibold mb-2">What I Do</h3>
+                <h3 className="text-2xl font-semibold mb-2">What I Do?</h3>
                 <p className="text-muted-foreground">
-                  I specialize in building modern web applications using the
-                  latest technologies. From responsive user interfaces to robust
-                  APIs and database design, I bring ideas to life with clean,
-                  maintainable code and attention to detail.
+                  Crafting modern web apps and api services with a focus on user experience and performance. I'm always eager to learn new technologies and frameworks to stay ahead in the ever-evolving tech landscape.
                 </p>
               </div>
 
@@ -128,7 +122,7 @@ const About: React.FC = () => {
                 style={{ animationDelay: "450ms" }}
               >
                 <a
-                  href="https://github.com"
+                  href="https://github.com/TAMILVIP007"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-secondary text-foreground hover:text-accent transition-colors duration-300"
@@ -137,7 +131,7 @@ const About: React.FC = () => {
                   <Github size={20} />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/indrajeethy/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-full bg-secondary text-foreground hover:text-accent transition-colors duration-300"

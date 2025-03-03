@@ -4,44 +4,33 @@ import ProjectCard from "./ProjectCard";
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "Telegram Bot for LinkedIn Posting with AI Integration",
       description:
-        "A full-featured online store with payment processing, user authentication, and inventory management.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
+        "The bot is designed to streamline content creation for LinkedIn by automating the process using AI and offering an easy way to post directly from Telegram.",
+      tags: ["LinkedIn", "Gemini", "Golang", "Telegram"],
       imageUrl:
-        "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800",
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
+        "https://files.indrajeeth.in/alexander-shatov-9Zjd7PE_FRM-unsplash.jpg",
+      githubUrl: "https://github.com/TAMILVIP007/Linkedin-Poster",
     },
     {
-      title: "Task Management App",
+      title: "Telegram Story Downloader Bot",
       description:
-        "A collaborative project management tool with real-time updates and team collaboration features.",
-      tags: ["Next.js", "Firebase", "Tailwind CSS", "TypeScript"],
+        "This bot allows you to download stories from Telegram users effortlessly. Simply send a Telegram username or profile link, and the bot will fetch all available stories for you.",
+      tags: ["Python", "telegram", "sql"],
       imageUrl:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800",
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
+        "https://files.indrajeeth.in/image_2025-03-03_15-40-22.png",
+      githubUrl: "https://github.com/TAMILVIP007/TgStoryDl",
+      liveUrl: "https://t.me/TGStoryDl_Bot",
     },
     {
-      title: "Finance Dashboard",
+      title: "Whatsapp Chatbot",
       description:
-        "An analytics dashboard for tracking personal finances with data visualization and insights.",
-      tags: ["React", "D3.js", "Express", "PostgreSQL"],
+        "This project is an open-source chatbot for Whatsapp, built with Golang and the Whatsmeow library. It uses OpenAI to generate responses, enabling it to have complex conversations.",
+      tags: ["Golang", "ChatGPT", "Whatsapp"],
       imageUrl:
-        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800",
-      githubUrl: "https://github.com",
-      liveUrl: "https://example.com",
-    },
-    {
-      title: "Weather Forecast App",
-      description:
-        "A weather application providing detailed forecasts, alerts, and location-based weather data.",
-      tags: ["React Native", "Redux", "API Integration", "Geolocation"],
-      imageUrl:
-        "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800",
-      githubUrl: "https://github.com",
-    },
+        "https://files.indrajeeth.in/dima-solomin-upBKRmHJrCI-unsplash.jpg",
+      githubUrl: "https://github.com/TAMILVIP007/WhatChatGPT",
+    },   
   ];
 
   return (

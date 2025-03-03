@@ -24,7 +24,7 @@ const Header: React.FC = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between">
           <a href="#home" className="text-xl font-semibold text-gradient">
-            Dev<span className="font-bold">Portfolio</span>
+            <span className="font-bold">Portfolio</span>
           </a>
 
           {/* Desktop Navigation */}
