@@ -52,7 +52,7 @@ const About: React.FC = () => {
           About <span className="text-gradient">Me</span>
         </h2>
         <p className="section-subtitle">
-          I'm passionate about creating elegant solutions to complex problems.
+        
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <div
@@ -82,10 +82,10 @@ const About: React.FC = () => {
               <div className="opacity-0 animate-fade-in-left">
                 <h3 className="text-2xl font-semibold mb-2">Who Am I?</h3>
                 <p className="text-muted-foreground">
-                  I'm a passionate Backend Developer with a deep love for
-                  creating efficient, elegant solutions. With experience in
-                  various backend technologies, I focus on building robust and
-                  scalable systems to support seamless user experiences.
+                I’m a 22 year old developer from Tamil Nadu, India, driven by a
+                passion for crafting impactful projects. With a focus on web backend
+                development, I’m always on the lookout for opportunities to push
+                boundaries, learn, and grow.
                 </p>
               </div>
 

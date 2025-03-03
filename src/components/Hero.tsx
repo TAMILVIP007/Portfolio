@@ -89,16 +89,6 @@ const Hero: React.FC = () => {
             </div>
           </h1>
 
-          <p
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mb-10 opacity-0 animate-fade-in"
-            style={{ animationDelay: "400ms" }}
-          >
-            I’m a 22 year old developer from Tamil Nadu, India, driven by a
-            passion for crafting impactful projects. With a focus on web backend
-            development, I’m always on the lookout for opportunities to push
-            boundaries, learn, and grow.
-          </p>
-
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in"
             style={{ animationDelay: "600ms" }}
